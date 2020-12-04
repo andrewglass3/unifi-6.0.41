@@ -1,0 +1,14 @@
+version: '2'
+services:
+  unifi:
+    image: andrewglass3/unifi-6.0.41
+    ports:
+    - "8081:8081"
+    - "8080:8080"
+    - "8443:8443"
+    - "8843:8843"
+    - "3478:3478/udp"
+    restart: always
+    volumes:
+            - ./unifi-6.0.41/data:/var/lib/unifi
+            - ./unifi-6.0.41/logs:/var/log/unifi 
